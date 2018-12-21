@@ -33,7 +33,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Oh-My-Zsh:
-plugins=( colorize git kuubectl osx vagrant
+plugins=( colorize git kuubectl osx pyenv vagrant
   zsh-autosuggestions zsh-syntax-highlighting )
 source $ZSH/oh-my-zsh.sh
 
@@ -53,5 +53,7 @@ export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode - cyan
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-eval $(thefuck --alias)
+eval $(thefuck --alias) # Fuck
+eval "$(pyenv init -)" # PyEnv
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi # PyEnv-Virtualenv
 
